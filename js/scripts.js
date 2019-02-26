@@ -114,8 +114,8 @@ function displayModalUser(users){
   }// end closeBtt
 
   //Submit form for searching
-  $('form').on('click', function(e){
-    e.preventDefault();
+  $('form').on('submit', function(e){
+    e.preventDefault();//prevent submitting the form and reloading a new page
     searchUser();
   });
 });//end ready
