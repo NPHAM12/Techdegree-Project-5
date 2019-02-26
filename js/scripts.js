@@ -1,6 +1,6 @@
 //------------------------------
 // Team Treehouse Project 5
-// Public API Requests
+// Public API Requests From RANDOMUSER.ME
 // Nguyen Pham
 //------------------------------
 
@@ -17,8 +17,6 @@ $(document).ready(function() {
       fetchData(url)
     ])
     .then(data => {
-      // console.log("data: ", data); //data is an array of objects)
-      // console.log("data[0]: ", data[0]); //data[0] is an object of objects (object: info and array of objects: results)
       displayMarkUpUsers(data[0].results); //data[0].results = array of 12 objects
       displayModalUser(data[0].results);
     });
@@ -29,9 +27,6 @@ $(document).ready(function() {
 
   //displayUsers method: display randomlly 12 users on page
   function displayMarkUpUsers(users) {
-    // console.log("displayUsers Here");
-    // console.log("data: ", data);
-    // $.each(users, function(index, user) {
     $(users).each(function(index, user) {
       var userHtml = '<div class="card">';
             userHtml += '<div class="card-img-container">';
@@ -65,8 +60,6 @@ function displayModalUser(users){
     var year = user.dob.date.substring(2,4); //get year
     var month = user.dob.date.substring(5,7);//get month
     var day = user.dob.date.substring(8,10);//get day
-    // console.log("displayModalUser Here");
-    // console.log("data: ", data);
     // then add a new modal window to page when cliking
       var userHtml = '<div class="modal-container">';
             userHtml += '<div class="modal">';
@@ -102,17 +95,6 @@ function displayModalUser(users){
        }
      }
   }
-  //
-  // function searchUser(){
-  //   let filterInput;
-  //   filterInput = $('input').val().toLowerCase(); //get value from the textfield then transform to lower case
-  //    numberOfUsers = $('div.card');
-  //    $('div.card').each(function(index, value){
-  //      // cardContent = value.text();
-  //      console.log("here", value.text());
-  //      // .toLowerCase.indexOf(filterInput) <= -1)
-  //    });
-  // }
 
   // -----------------------------------------------------------------------
   // LISTENER EVENTS
@@ -126,7 +108,6 @@ function displayModalUser(users){
 
   //Submit form for searching
   $('form').on('click', function(e){
-    e.preventDefault();//reload a new page after submitting
     searchUser();
   });
 });//end ready
