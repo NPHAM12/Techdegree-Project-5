@@ -95,10 +95,10 @@ function displayModalUser(users){
      numberOfUsers = document.querySelectorAll("div.card");
      for(let i = 0; i<numberOfUsers.length; i++){
        let cardContent = numberOfUsers[i].textContent; //read contents from all elements in class="card"
-       if(cardContent.toLowerCase().indexOf(filterInput) <= -1){//if contents of cards don't match any letters of filterInput in search box then disappear those cards
-         numberOfUsers[i].style.display = "none";
-       }else{
+       if(cardContent.toLowerCase().indexOf(filterInput) > -1){//if contents of cards match any letters of filterInput in search box then appear those cards
          numberOfUsers[i].style.display = "";
+       }else{
+         numberOfUsers[i].style.display = "none";
        }
      }
   }
