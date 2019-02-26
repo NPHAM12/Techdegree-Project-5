@@ -8,4 +8,7 @@ This project will appear 12 users(image, email, and city) randomly with fetching
 New random employee information displays each time the page refreshes
 See details (image,fullname, email, city, cellphone, address, and birthday)of each user by selecting on a specific one
 Close the modal user window by clicking on "X" button
-Search function: find out user(s) who has matching infomation with input in search field
+
+Exceed Epectations:
+I just do a search function: find out user(s) who has matching infomation with input in search field
+
