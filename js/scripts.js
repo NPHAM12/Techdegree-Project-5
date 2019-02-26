@@ -5,7 +5,7 @@
 //------------------------------
 
 $(document).ready(function() {
-  var url = 'https://randomuser.me/api/?results=12&nat=us';
+  var url = 'https://randomuser.me/api/?results=12';
 
   function fetchData(link) { // fetchData() will return a "promise" once the data is retrieved from the server and then parsed to JSON.
     return fetch(link)
@@ -47,8 +47,6 @@ $(document).ready(function() {
 function displayModalUser(users){
   $('.card').each(function(index, user){
     user.addEventListener('click', function(e){
-      // console.log("Clicked User: ",user);
-      // console.log("User: ",users[index]);//users[index] is an object
       createModalUser(users[index]);//users[index] is an object
     });
   });
@@ -70,7 +68,7 @@ function displayModalUser(users){
                   userHtml += `<p class="modal-text">${user.email}</p>`;
                   userHtml += `<p class="modal-text cap">${user.location.city}</p>`;
                   userHtml += '<hr>';
-                  userHtml += `<p class="modal-text">${user.cell}</p>`;
+                  userHtml += `<p class="modal-text">Cellphone: ${user.cell}</p>`;
                   // class="cap" transforms the first character of each word to uppercase
                   userHtml += `<p class="modal-text cap">${user.location.street}, ${user.location.city}, ${user.location.state} ${user.location.postcode}</p>`;
                   userHtml += `<p class="modal-text">Birthday: ${month}/${day}/${year}</p>`;
