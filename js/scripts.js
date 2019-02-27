@@ -89,19 +89,17 @@ function displayModalUser(users){
   } //end displayModalUser
 
   // searchUser() function: find a specific user
-  function searchUser(){
-    let filterInput;
-    filterInput = document.querySelector('INPUT').value.toLowerCase();//get value from the textfield then transform to lower case
-     numberOfUsers = document.querySelectorAll("div.card");
-     for(let i = 0; i<numberOfUsers.length; i++){
-       let cardContent = numberOfUsers[i].textContent; //read contents from all elements in class="card"
-       if(cardContent.toLowerCase().indexOf(filterInput) > -1){//if contents of cards match any letters of filterInput in search box then appear those cards
-         numberOfUsers[i].style.display = "";
+   function searchUser(){
+    let filterInput = $('input').val().toLowerCase(); //get value from the textfield then transform to lower case
+     $('div.card').each(function(index, value){
+       cardContent = $(value).text(); //read contents from all elements in class="card"
+       if(cardContent.toLowerCase().indexOf(filterInput) > -1){ //if contents of cards match any letters of filterInput in search box then disappear those cards
+         $(value).show();
        }else{
-         numberOfUsers[i].style.display = "none";
+         $(value).hide();
        }
-     }
-  }
+     });//end each loop
+  }// end searchUser()
 
   // -----------------------------------------------------------------------
   // LISTENER EVENTS
